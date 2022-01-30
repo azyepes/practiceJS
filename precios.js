@@ -22,11 +22,6 @@ function buttonPriceDiscount() {
 
 // CUPÓN
 
-// function calcularPrecioConCupon (precio, descuento) {
-//     const precioFinal = (precio * (100 - descuento)) / 100;
-//     return precioFinal;
-// }
-
 function buttonPriceCupon() {
     const inputPrice = document.getElementById("inputPriceCupon");
     const priceValue = inputPrice.value;
@@ -34,48 +29,28 @@ function buttonPriceCupon() {
     const inputCupon = document.getElementById("inputCupon");
     const cuponValue = inputCupon.value;
 
-    console.log(priceValue, typeof(priceValue));
-    console.log(cuponValue, typeof(cuponValue));
-    console.log(inputCupon, typeof(inputCupon));
-
     const finalPriceCupon = document.getElementById("finalPriceCupon");
 
-    const cupon1 = 
-        {
-            nombre: "bienvenida10",
-            descuento: 15
-        };
+    const cupones = [
+        {   nombre: "bienvenida10", descuento: 15},
+        {   nombre: "cumpleañosfeliz", descuento: 20},
+        {   nombre: "sanvalentin02", descuento: 10}
+    ];
 
-    const cupon2 =
-        {
-            nombre: "cumpleañosfeliz",
-            descuento: 20
-        };
-
-    const cupon3 =
-        {
-            nombre: "sanvalentin02",
-            descuento: 10
-        };
-
-        console.log(cupon1.nombre, typeof(cupon1.nombre), cuponValue);
-
-    if (cupon1.nombre === cuponValue) {
-        const precioFinal = calcularPrecioConDescuento (priceValue, cupon1.descuento);
-        finalPriceCupon.innerText = "Usted tiene " + cupon1.descuento + "% de descuento. El precio con descuento es $" + precioFinal + " dolares.";
-        console.log(priceValue, cupon1.descuento);
-    } else if (cupon2.nombre === cuponValue) {
-        const precioFinal = calcularPrecioConDescuento (priceValue, cupon2.descuento);
-        finalPriceCupon.innerText = "Usted tiene " + cupon2.descuento + "% de descuento. El precio con descuento es $" + precioFinal + " dolares.";
-        console.log("hola 2");
-    } else if (cupon3.nombre === cuponValue) {
-        const precioFinal = calcularPrecioConDescuento (priceValue, cupon3.descuento);
-        finalPriceCupon.innerText = "Usted tiene " + cupon3.descuento + "% de descuento. El precio con descuento es $" + precioFinal + " dolares.";
-        console.log("hola 3");
-    } else {
-        finalPriceCupon.innerText = "Cupón invalido. Por favor ingrese otro.";
-        console.log("hola 4");
+    const isCuponValid = function (cupon) {
+        return cupon.nombre == cuponValue;
     }
 
-    
+    console.log(cupones.find(isCuponValid));
+
+    const cuponUser = cupones.find(isCuponValid);
+
+    if (!cuponUser) {
+        finalPriceCupon.innerText = "Cupón invalido. Por favor ingrese otro.";
+        console.log("hola 4");
+    } else {
+        const precioFinal = calcularPrecioConDescuento (priceValue, cuponUser.descuento);
+        finalPriceCupon.innerText = "Usted tiene " + cuponUser.descuento + "% de descuento. El precio con descuento es $" + precioFinal + " dolares.";
+        console.log(priceValue, cuponUser.descuento);
+    }
 }
