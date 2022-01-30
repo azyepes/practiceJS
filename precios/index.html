@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./precios.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/data-science.png">
+    <script src="https://kit.fontawesome.com/749147ef9c.js" crossorigin="anonymous"></script>
+    <title>Porcentajes y descuentos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <picture>
+                <a href="#"><img src="/images/logo-luis-yps-fdez-alt-4.png" alt="logo-website"></a>
+            </picture>
+            <div class="nav_menu">
+                <ul>
+                    <a href="/index.html"><li>INICIO</li></a>
+                    <a href="/figurasgeometricas/index.html"><li>TALLER 1</li></a>
+                    <a href="/precios/index.html"><li>TALLER 2</li></a>
+                    <a href="#"><li>TALLER 3</li></a>
+                    <a href="#"><li>TALLER 4</li></a>
+                    <a href="#"><li>RETOS</li></a>
+                </ul>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <div class="main_title">
+            <h1 class="main_title_h1">Porcentajes y descuentos</h1>
+            <p class="main_title_p">Calcula el valor final a pagar de un producto con descuento.</p>
+        </div>
+        <div class="taller">
+            <section>
+                <form action="">
+                    <label for="inputPrice">Escribe el precio del producto: $</label>
+                    <input type="number" id="inputPrice" placeholder="Precio $"/>
+                    <label for="inputDiscount">Escribe el descuento del producto: $</label>
+                    <input type="number" id="inputDiscount" placeholder="Desceunto %"/>
+                    <button type="button" onclick="buttonPriceDiscount()">Calcular el precio final con descuento</button>
+                    <h2>Resultado:</h2>
+                    <p class="finalPrice" id="finalPrice"></p>
+                </form>
+            </section>
+            <section>
+                <form action="">
+                    <label for="inputPriceCupon">Escribe el precio del producto: $</label>
+                    <input type="number" id="inputPriceCupon" placeholder="Precio $"/>
+                    <label for="inputCupon">Escribe el cupón de descuento si tiene uno:</label>
+                    <input type="text" id="inputCupon" placeholder="Cupón" autocomplete="off"/>
+                    <button type="button" onclick="buttonPriceCupon()">Calcular el precio final con cupón de descuento</button>
+                    <h2>Resultado:</h2>
+                    <p class="finalPrice finalPriceCupon" id="finalPriceCupon"></p>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <div class="footer_container">
+            <picture class="footer_picture">
+                <a class="footer_a" href="#"><img class="footer_a_img" src="/images/logo-luis-yps-fdez-alt-4.png" alt="logo-website"></a>
+            </picture>
+            <hr>
+            <div class="footer_info">
+                <ul>
+                    <a href="/index.html"><li>INICIO</li></a>
+                    <a href="#"><li>SOBRE MI</li></a>
+                    <a href="#"><li>Copyright <i class="far fa-copyright"></i></li></a>
+                </ul>
+                <div class="social_media">
+                    <h3>Redes sociales</h3>
+                    <a href="https://www.instagram.com/luisypsfdez/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                    <a href="https://www.linkedin.com/in/luis-ernesto-yepes-fernandez-249454182/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./precios.js"></script>
+</body>
+</html>
