@@ -4,6 +4,7 @@
     --softviolet: #46A0EA;
     --lightblue: #0080E6;
     --violetlogo: #27273D;
+    --softviolet: hsl(277, 64%, 61%);
 }
 
 * {

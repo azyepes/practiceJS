@@ -266,7 +266,7 @@ footer {
 }
 
 .fab:hover {
-    color: var(--darkdesaturatedblue);
+    color: var(--softviolet);
 }
 
 @media screen and (min-width: 660px) {
